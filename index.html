@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sri Lanka Beach Huts | Ranga's & Lighthouse</title>
+    <!-- Google Fonts for Poppins & Playfair Display -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ==========================================
+           AI DESIGN SYSTEM INTEGRATION (Day 3 Variables)
+           ========================================== */
+        :root {
+            --font-heading: 'Playfair Display', serif;
+            --font-body: 'Poppins', sans-serif;
+            --bg-primary: #FDFBF7;
+            --text-dark: #2B2927;
+            --text-muted: #6E6A66;
+            --color-rangas: #147B87;      /* Surf Teal */
+            --color-lighthouse: #3E6B52;  /* Eco Green */
+            --radius: 8px;
+            --transition: 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-primary);
+            color: var(--text-dark);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Hero / Header Split Section */
+        .welcome-hero {
+            text-align: center;
+            padding: 5rem 1.5rem 3rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .welcome-hero h1 {
+            font-family: var(--font-heading);
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: #1A1918;
+        }
+
+        .welcome-hero p {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+        }
+
+        /* Responsive Split Split Container */
+        .split-container {
+            display: flex;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto 5rem auto;
+            padding: 0 1.5rem;
+            gap: 2rem;
+        }
+
+        /* Individual Property Cards */
+        .property-card {
+            flex: 1;
+            min-width: 300px;
+            background: #FFFFFF;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            border: 1px solid #E6E2DE;
+        }
+
+        .property-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+        }
+
+        /* Image Placeholder Blocks (Ready for Canva/DALL-E Assets) */
+        .card-image-placeholder {
+            height: 320px;
+            background-color: #E6E2DE;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-muted);
+            font-family: var(--font-heading);
+            font-style: italic;
+            position: relative;
+        }
+
+        .rangas-img { background: linear-gradient(135deg, #147B8733, #147B8711), #E6E2DE; }
+        .lighthouse-img { background: linear-gradient(135deg, #3E6B5233, #3E6B5211), #E6E2DE; }
+
+        .property-badge {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            background: #FFFFFF;
+            padding: 0.4rem 1rem;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            border-radius: 50px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .rangas-badge { color: var(--color-rangas); }
+        .lighthouse-badge { color: var(--color-lighthouse); }
+
+        .card-content {
+            padding: 2.5rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .card-content h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .card-content p {
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            font-size: 0.95rem;
+        }
+
+        /* Buttons matching distinct property accents */
+        .btn {
+            display: block;
+            text-align: center;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            font-weight: 500;
+            border-radius: 4px;
+            margin-top: auto;
+            transition: background var(--transition);
+        }
+
+        .btn-rangas {
+            background-color: var(--color-rangas);
+            color: #FFFFFF;
+        }
+        .btn-rangas:hover { background-color: #0E5A63; }
+
+        .btn-lighthouse {
+            background-color: var(--color-lighthouse);
+            color: #FFFFFF;
+        }
+        .btn-lighthouse:hover { background-color: #2B4C3A; }
+
+        /* Footer styling */
+        footer {
+            text-align: center;
+            padding: 3rem 1.5rem;
+            border-top: 1px solid #E6E2DE;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* Mobile Optimization Pass (Pre-optimized for Day 9/10) */
+        @media(max-width: 768px) {
+            .welcome-hero h1 { font-size: 2.2rem; }
+            .split-container { padding: 0 1rem; }
+            .card-content { padding: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Main Entry Hero -->
+    <header class="welcome-hero">
+        <h1>East Coast Sri Lanka Awaits</h1>
+        <p>Two distinct coastal sanctuaries managed with care. Choose your getaway or explore both to experience the perfect blend of surf culture and serene nature.</p>
+    </header>
+
+    <!-- Side-by-Side Dual Properties Setup -->
+    <main class="split-container">
+        
+        <!-- Property 1: Ranga's -->
+        <article class="property-card">
+            <div class="card-image-placeholder rangas-img">
+                <span class="property-badge rangas-badge">Arugam Bay</span>
+                📸 Surf Town Sanctuary
+            </div>
+            <div class="card-content">
+                <h2>Ranga's Beach Hut</h2>
+                <p>Step from your beachfront cabana or elevated treehouse straight onto the golden sands of Sri Lanka’s ultimate surf town. Ideal for backpackers, surf lovers, and high-energy community vibes.</p>
+                <a href="#" class="btn btn-rangas">Explore Surf Getaway</a>
+            </div>
+        </article>
+
+        <!-- Property 2: Lighthouse -->
+        <article class="property-card">
+            <div class="card-image-placeholder lighthouse-img">
+                <span class="property-badge lighthouse-badge">Komari</span>
+                📸 Hidden Eco Retreat
+            </div>
+            <div class="card-content">
+                <h2>Lighthouse Beach Hut</h2>
+                <p>Escape the crowds at our peaceful eco-retreat. Tucked away on an untouched coastline, enjoy pristine rustic cabanas, an on-site organic-farm restaurant, and serene local lagoon safaris.</p>
+                <a href="#" class="btn btn-lighthouse">Explore Eco Retreat</a>
+            </div>
+        </article>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Sri Lanka Beach Huts. Redesigned with AI Assistance.</p>
+    </footer>
+
+</body>
+</html>
