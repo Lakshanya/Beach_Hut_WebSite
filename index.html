@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>East Coast Beach Huts | One Family, Two Coastlines — Sri Lanka</title>
+<meta name="description" content="Ranga's Beach Hut in Arugam Bay and Lighthouse Beach Hut in Komari — two family-run guesthouses on Sri Lanka's east coast. Choose your coastline.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --night:#0A1B20;
+    --night-2:#0F2830;
+    --night-3:#153640;
+    --beam:#F4C868;
+    --beam-soft:#F9E1A8;
+    --foam:#E4F1EE;
+    --foam-dim:#A9C2BE;
+    --rope:#9C6B44;
+    --line: rgba(228,241,238,0.14);
+    --maxw:1180px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0; background:var(--night); color:var(--foam);
+    font-family:'Inter',sans-serif; -webkit-font-smoothing:antialiased; overflow-x:hidden;
+  }
+  h1,h2,h3{ font-family:'Fraunces',serif; font-weight:600; letter-spacing:-0.01em; line-height:1.06; margin:0; color:var(--foam); }
+  a{ color:inherit; } img{ max-width:100%; display:block; }
+  .wrap{ max-width:var(--maxw); margin:0 auto; padding:0 30px; }
+  .mono{ font-family:'JetBrains Mono',monospace; }
+  .eyebrow{
+    font-family:'JetBrains Mono',monospace; font-size:12px; letter-spacing:0.12em; text-transform:uppercase;
+    font-weight:500; color:var(--beam); display:flex; align-items:center; gap:10px;
+  }
+  .eyebrow::before{ content:""; width:20px; height:1px; background:var(--beam); display:inline-block; }
+
+  /* ---------------- header ---------------- */
+  header{ position:sticky; top:0; z-index:50; background:rgba(10,27,32,0.75); backdrop-filter:blur(10px); border-bottom:1px solid var(--line); }
+  .headbar{ display:flex; align-items:center; justify-content:space-between; padding:18px 30px; max-width:var(--maxw); margin:0 auto; gap:16px; flex-wrap:wrap; }
+  .brandmark{ font-family:'Fraunces',serif; font-weight:600; font-size:18px; display:flex; align-items:center; gap:9px; }
+  .brandmark .beam-dot{ width:8px; height:8px; border-radius:50%; background:var(--beam); box-shadow:0 0 10px 2px rgba(244,200,104,0.7); }
+  nav.hlinks{ display:flex; gap:26px; font-size:14px; font-weight:500; }
+  nav.hlinks a{ text-decoration:none; opacity:0.7; } nav.hlinks a:hover{ opacity:1; }
+  @media(max-width:760px){ nav.hlinks{ display:none; } }
+
+  /* ---------------- hero: lighthouse beam ---------------- */
+  .beam-hero{ position:relative; min-height:88vh; display:flex; align-items:center; overflow:hidden; }
+  .beam-hero .horizon{
+    position:absolute; left:0; right:0; bottom:0; height:38%;
+    background:linear-gradient(180deg, transparent, var(--night-2) 60%);
+  }
+  .beam-sweep{
+    position:absolute; top:-20%; left:50%; width:220vmax; height:220vmax;
+    transform:translate(-50%,-50%);
+    background:conic-gradient(from 0deg,
+      transparent 0deg, transparent 78deg,
+      rgba(244,200,104,0.16) 88deg,
+      rgba(244,200,104,0.55) 90deg,
+      rgba(244,200,104,0.16) 92deg,
+      transparent 102deg, transparent 360deg);
+    animation: sweep 9s linear infinite;
+    pointer-events:none;
+  }
+  @keyframes sweep{ from{ transform:translate(-50%,-50%) rotate(0deg); } to{ transform:translate(-50%,-50%) rotate(360deg); } }
+  .stars{
+    position:absolute; inset:0;
+    background-image:
+      radial-gradient(1.5px 1.5px at 20% 20%, rgba(228,241,238,0.5), transparent),
+      radial-gradient(1.5px 1.5px at 65% 12%, rgba(228,241,238,0.35), transparent),
+      radial-gradient(1px 1px at 80% 30%, rgba(228,241,238,0.4), transparent),
+      radial-gradient(1.5px 1.5px at 40% 40%, rgba(228,241,238,0.3), transparent),
+      radial-gradient(1px 1px at 90% 55%, rgba(228,241,238,0.3), transparent),
+      radial-gradient(1.5px 1.5px at 10% 60%, rgba(228,241,238,0.25), transparent);
+    opacity:0.8;
+  }
+  .beam-hero-content{ position:relative; z-index:2; padding:60px 0 100px; }
+  .beam-hero h1{ font-size:clamp(38px,6vw,72px); max-width:16ch; }
+  .beam-hero p.lede{ font-size:18px; line-height:1.65; max-width:52ch; margin-top:22px; color:var(--foam-dim); }
+  .cta-row{ display:flex; gap:14px; margin-top:36px; flex-wrap:wrap; }
+  .btn{ display:inline-flex; align-items:center; gap:8px; padding:14px 26px; border-radius:999px; font-weight:600; font-size:14.5px; text-decoration:none; border:1px solid transparent; cursor:pointer; transition:transform .2s ease; }
+  .btn:hover{ transform:translateY(-2px); }
+  .btn-primary{ background:var(--beam); color:var(--night); box-shadow:0 10px 26px -8px rgba(244,200,104,0.5); }
+  .btn-ghost{ background:transparent; border-color:rgba(228,241,238,0.35); color:var(--foam); }
+
+  /* ---------------- section shells ---------------- */
+  section.block{ padding:96px 0; border-top:1px solid var(--line); position:relative; }
+  .block-head{ max-width:640px; margin-bottom:48px; }
+  .block-head h2{ font-size:clamp(28px,4vw,42px); margin-top:14px; }
+  .block-head p{ margin-top:16px; font-size:16.5px; line-height:1.7; color:var(--foam-dim); }
+
+  /* ---------------- history: coastline timeline ---------------- */
+  .coastline-track{ position:relative; height:2px; background:var(--line); margin:0 0 56px; border-radius:2px; }
+  .coastline-track::before{
+    content:""; position:absolute; left:0; top:50%; transform:translateY(-50%); width:100%; height:2px;
+    background:repeating-linear-gradient(90deg, var(--beam) 0 10px, transparent 10px 20px); opacity:0.35;
+  }
+  .history-grid{ display:grid; grid-template-columns:1fr 1fr; gap:48px; }
+  @media(max-width:820px){ .history-grid{ grid-template-columns:1fr; } }
+  .history-card{ position:relative; padding-left:26px; border-left:1px solid var(--line); }
+  .history-card .year{ font-family:'JetBrains Mono',monospace; color:var(--beam); font-size:14px; }
+  .history-card h3{ font-size:22px; margin-top:10px; }
+  .history-card p{ font-size:15px; line-height:1.65; margin-top:10px; color:var(--foam-dim); }
+  .history-card::before{ content:""; position:absolute; left:-5px; top:2px; width:9px; height:9px; border-radius:50%; background:var(--beam); box-shadow:0 0 8px 2px rgba(244,200,104,0.55); }
+
+  /* ---------------- goal ---------------- */
+  .goal-band{ background:var(--night-2); border-radius:26px; padding:56px; display:grid; grid-template-columns:0.9fr 1.1fr; gap:44px; align-items:center; }
+  @media(max-width:820px){ .goal-band{ grid-template-columns:1fr; padding:36px; } }
+  .goal-band p{ font-size:17px; line-height:1.75; color:var(--foam-dim); }
+  .goal-quote{ font-family:'Fraunces',serif; font-style:italic; font-size:clamp(22px,2.8vw,30px); color:var(--foam); line-height:1.3; }
+
+  /* ---------------- eco ---------------- */
+  .eco-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+  @media(max-width:820px){ .eco-grid{ grid-template-columns:1fr; } }
+  .eco-card{ border:1px solid var(--line); border-radius:18px; padding:28px; background:linear-gradient(180deg, rgba(21,54,64,0.4), transparent); }
+  .eco-card .mark{ font-family:'JetBrains Mono',monospace; font-size:12px; color:var(--beam); letter-spacing:0.08em; text-transform:uppercase; }
+  .eco-card h3{ font-size:19px; margin-top:12px; }
+  .eco-card p{ font-size:14.5px; line-height:1.65; margin-top:10px; color:var(--foam-dim); }
+  .eco-note{ margin-top:26px; font-size:13.5px; color:var(--foam-dim); opacity:0.8; }
+
+  /* ---------------- choose your coast : split screen ---------------- */
+  .split-wrap{ padding:0; border-top:1px solid var(--line); }
+  .split-head{ text-align:center; padding:88px 30px 10px; }
+  .split-head h2{ font-size:clamp(28px,4.4vw,46px); }
+  .split-head p{ margin-top:14px; color:var(--foam-dim); font-size:16px; }
+  .split-screen{ display:grid; grid-template-columns:1fr 1fr; min-height:640px; position:relative; }
+  @media(max-width:860px){ .split-screen{ grid-template-columns:1fr; min-height:auto; } }
+  .split-panel{
+    position:relative; display:flex; align-items:flex-end; padding:56px; overflow:hidden;
+    text-decoration:none; color:var(--foam); min-height:420px; transition: flex-grow .4s ease;
+  }
+  .split-panel.left{
+    background: radial-gradient(140% 100% at 20% 0%, rgba(244,200,104,0.18), transparent 55%), linear-gradient(200deg, #12242a 0%, #1c3a3c 60%, #245045 100%);
+    border-right:1px solid var(--line);
+  }
+  .split-panel.right{
+    background: radial-gradient(140% 100% at 80% 0%, rgba(31,122,115,0.28), transparent 55%), linear-gradient(200deg, #0d1c22 0%, #17303a 55%, #234249 100%);
+  }
+  @media(min-width:861px){
+    .split-screen:hover .split-panel{ flex-grow:1; }
+    .split-screen .split-panel:hover{ flex-grow:1.35; }
+  }
+  .split-panel .panel-inner{ position:relative; z-index:2; }
+  .split-panel .loc{ font-family:'JetBrains Mono',monospace; font-size:12.5px; letter-spacing:0.08em; text-transform:uppercase; color:var(--beam-soft); display:flex; align-items:center; gap:8px; }
+  .split-panel .loc::before{ content:"📍"; font-size:12px; filter:grayscale(1) brightness(1.6); }
+  .split-panel h3{ font-size:clamp(30px,3.6vw,44px); margin-top:14px; }
+  .split-panel p{ margin-top:14px; max-width:38ch; font-size:15.5px; line-height:1.6; color:var(--foam-dim); }
+  .split-panel .go{ margin-top:26px; display:inline-flex; align-items:center; gap:10px; font-weight:600; font-size:14.5px; padding:12px 22px; border-radius:999px; border:1px solid rgba(228,241,238,0.35); }
+  .split-panel:hover .go{ background:var(--beam); color:var(--night); border-color:var(--beam); }
+  .split-divider{ position:absolute; left:50%; top:0; bottom:0; width:1px; background:var(--line); z-index:3; display:flex; align-items:center; justify-content:center; }
+  @media(max-width:860px){ .split-divider{ display:none; } }
+  .split-divider .km{ background:var(--night); border:1px solid var(--line); color:var(--foam-dim); font-family:'JetBrains Mono',monospace; font-size:11.5px; padding:8px 12px; border-radius:999px; white-space:nowrap; }
+  .grain{ position:absolute; inset:0; opacity:.15; mix-blend-mode:overlay; background-image: repeating-linear-gradient(180deg, transparent 0 6px, rgba(255,255,255,.5) 6px 7px); pointer-events:none; }
+
+  footer{ padding:44px 0; text-align:center; font-size:13px; color:var(--foam-dim); border-top:1px solid var(--line); }
+  footer a{ color:var(--beam-soft); text-decoration:none; }
+  ::selection{ background:var(--beam); color:var(--night); }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="headbar">
+    <div class="brandmark"><span class="beam-dot"></span>East Coast Beach Huts</div>
+    <nav class="hlinks">
+      <a href="#history">Our story</a>
+      <a href="#goal">Our goal</a>
+      <a href="#eco">Eco approach</a>
+      <a href="#choose">Choose your coast</a>
+    </nav>
+  </div>
+</header>
+
+<section class="beam-hero">
+  <div class="stars"></div>
+  <div class="beam-sweep"></div>
+  <div class="horizon"></div>
+  <div class="wrap beam-hero-content">
+    <div class="eyebrow">Sri Lanka · East Coast</div>
+    <h1>One family. One coastline. Two ways to slow down.</h1>
+    <p class="lede">For over a decade, the same family has kept two stretches of Sri Lanka's east coast open to travellers — one built around the surf and the sound of a busy season, the other built around the quiet of an empty beach. Same values, two different rhythms.</p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="#choose">Choose your coast</a>
+      <a class="btn btn-ghost" href="#history">Read our story</a>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="history">
+  <div class="wrap">
+    <div class="block-head">
+      <div class="eyebrow">Our history</div>
+      <h2>Two guesthouses, one story</h2>
+      <p>It started with a single beach hut in Arugam Bay, and grew, a few years later, into a second home further down the coast — built for guests who wanted the same welcome, somewhere quieter.</p>
+    </div>
+    <div class="coastline-track"></div>
+    <div class="history-grid">
+      <div class="history-card">
+        <div class="year mono">2014 · ARUGAM BAY</div>
+        <h3>Ranga's Beach Hut opens</h3>
+        <p>Founded right on the sand in Sri Lanka's best-known surf town, built to give backpackers and surfers an affordable, homely place to stay — soon recognised by The Guardian, UK as one of the country's best budget stays.</p>
+      </div>
+      <div class="history-card">
+        <div class="year mono">2016 · KOMARI</div>
+        <h3>Lighthouse Beach Hut follows</h3>
+        <p>A second property, 15km south, built with a different pace in mind — only eight cabanas, solar power, and an organic farm, on a wide stretch of coastline near Komari Lagoon.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="goal">
+  <div class="wrap">
+    <div class="goal-band">
+      <div>
+        <div class="eyebrow">Our goal</div>
+        <h2 style="margin-top:14px; font-size:clamp(24px,3vw,32px);">Keep the coast honest</h2>
+      </div>
+      <div>
+        <p class="goal-quote">"We wanted two places where the coastline still does most of the talking — not the furniture."</p>
+        <p style="margin-top:22px;">Both properties are run with the same intent: simple, comfortable rooms, real local food, and a location that does the heavy lifting. Whether guests come for the surf season or for the quiet, the goal is the same — a stay that feels like it belongs to this coast, not a copy of one built anywhere else.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="eco">
+  <div class="wrap">
+    <div class="block-head">
+      <div class="eyebrow">Eco approach</div>
+      <h2>Built light, on purpose</h2>
+      <p>Sustainability looks a little different at each property, but the underlying rule is shared: build with what the coast already has, and take as little from it as possible.</p>
+    </div>
+    <div class="eco-grid">
+      <div class="eco-card">
+        <div class="mark">Materials</div>
+        <h3>Natural, local building</h3>
+        <p>Lighthouse Beach Hut's cabanas are built mostly from natural materials sourced around the property, keeping construction in step with the surrounding land.</p>
+      </div>
+      <div class="eco-card">
+        <div class="mark">Energy</div>
+        <h3>Solar power</h3>
+        <p>Solar panels supply Lighthouse Beach Hut's power — a quieter footprint for a property that's already built around quiet.</p>
+      </div>
+      <div class="eco-card">
+        <div class="mark">Food</div>
+        <h3>Organic, on-site farming</h3>
+        <p>Meals at Lighthouse are prepared from produce grown on the property's own organic farm, and both kitchens lean on local, home-style cooking over anything shipped in.</p>
+      </div>
+    </div>
+    <p class="eco-note">Lighthouse Beach Hut's eco-building is the most developed expression of this today — the same thinking guides how Ranga's Beach Hut in Arugam Bay is run and grown over time.</p>
+  </div>
+</section>
+
+<section class="split-wrap" id="choose">
+  <div class="split-head">
+    <div class="eyebrow" style="justify-content:center;">Choose your coast</div>
+    <h2>Same family. Different rhythm.</h2>
+    <p>Pick the side of the coastline that matches your trip — you can always switch pages later.</p>
+  </div>
+  <div class="split-screen">
+    <a class="split-panel left" href="rangas.html">
+      <div class="grain"></div>
+      <div class="panel-inner">
+        <div class="loc">Arugam Bay</div>
+        <h3>Ranga's Beach Hut</h3>
+        <p>Surf town energy, beachfront cabanas, and a place that's always a little social.</p>
+        <span class="go">Explore Ranga's →</span>
+      </div>
+    </a>
+    <div class="split-divider"><span class="km">15km apart</span></div>
+    <a class="split-panel right" href="lighthouse.html">
+      <div class="grain"></div>
+      <div class="panel-inner">
+        <div class="loc">Komari</div>
+        <h3>Lighthouse Beach Hut</h3>
+        <p>Eight cabanas, an organic farm, and a stretch of coastline that stays quiet.</p>
+        <span class="go">Explore Lighthouse →</span>
+      </div>
+    </a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    Ranga's Beach Hut, Arugam Bay · Lighthouse Beach Hut, Komari · East Coast, Sri Lanka<br>
+    <a href="rangas.html">Ranga's Beach Hut</a> &nbsp;·&nbsp; <a href="lighthouse.html">Lighthouse Beach Hut</a>
+  </div>
+</footer>
+
+</body>
+</html>
