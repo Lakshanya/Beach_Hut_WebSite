@@ -121,7 +121,7 @@
   .contact-card .row{ display:flex; justify-content:space-between; padding:14px 0; border-bottom:1px solid rgba(247,241,225,0.15); font-size:14.5px; }
   .contact-card .row:last-child{ border-bottom:none; }
   .contact-card .row span:first-child{ opacity:.6; }
-  .social-row{ display:flex; gap:12px; margin-top:22px; }
+  .social-row{ display:flex; gap:10px; margin-top:22px; flex-wrap:wrap; }
   .social-row a{ border:1px solid rgba(247,241,225,0.3); border-radius:999px; padding:9px 18px; text-decoration:none; font-size:13.5px; font-weight:600; }
   .form-stub{ display:grid; gap:12px; }
   .form-stub input, .form-stub textarea{ font-family:'Inter',sans-serif; font-size:14.5px; padding:14px 16px; border-radius:12px; border:1px solid var(--line); background:var(--sand-light); }
@@ -144,7 +144,7 @@
     <a class="wordmark" href="index.html"><span class="script">Lighthouse</span><span class="caps">Beach Hut</span></a>
     <div class="headlinks">
       <nav class="links">
-        <a href="#about">About</a><a href="#rooms">Rooms</a><a href="#host">Host Event</a><a href="#food">Restaurant</a><a href="#do">Things to do</a><a href="#location">Location</a><a href="#contact">Contact</a>
+        <a href="#about">About</a><a href="#rooms">Rooms</a><a href="#host">Host Event</a><a href="#food">Restaurant</a><a href="#do">Things to do</a><a href="#contact">Contact</a><a href="#location">Location</a>
       </nav>
       <a class="switch-btn" href="rangas.html">Visit Ranga's →</a>
     </div>
@@ -301,7 +301,41 @@
           <div class="do-photo"><img src="images/do-jungle-safari.jpg" alt="Jungle safari near Lighthouse Beach Hut" onerror="this.style.display='none'"></div>
           <div class="do-body"><div class="mark">full day</div><h3>Jungle Safari</h3><p>A day trip into nearby jungle and national park territory — keep an eye out for elephants, water buffalo, and a wide range of birdlife, best arranged through the property.</p></div>
         </div>
+        <div class="do-card">
+          <div class="do-photo" style="position:relative;">
+            <img src="images/do-stargazing.jpeg" alt="The Milky Way visible over Lighthouse Beach Hut, Komari" onerror="this.style.display='none'">
+            <span style="position:absolute; bottom:8px; right:12px; font-size:11px; color:rgba(247,241,225,0.75); text-shadow:0 1px 3px rgba(0,0,0,0.6);">Photo: Farzan Nijabdeen</span>
+          </div>
+          <div class="do-body"><div class="mark">after dark</div><h3>Milky Way nights</h3><p>Far enough from city lights that the Milky Way shows up clearly on a clear night — bring a mat and look up.</p></div>
+        </div>
       </div>
+    </div>
+  </section>
+
+<section class="block" id="contact">
+    <div class="wrap contact-grid">
+      <div class="contact-card">
+        <h2 style="color:var(--cream); font-size:22px;">Lighthouse Beach Hut</h2>
+        <div class="row"><span>Address</span><span>Lighthouse Road, Komari, Pottuvil (32500)</span></div>
+        <div class="row"><span>Phone</span><span>+94 77 317 9594</span></div>
+        <div class="row"><span>Email</span><span>booking@lighthousebeachhut.com</span></div>
+        <div class="social-row">
+          <a href="https://www.facebook.com/LighthouseBeachHut/" target="_blank" rel="noopener">Facebook</a>
+          <a href="https://www.instagram.com/lighthousebeachhut/" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://www.tripadvisor.com/Hotel_Review-g3576746-d13004183-Reviews-Light_House_Beach_Hut-Komari_Eastern_Province.html" target="_blank" rel="noopener">TripAdvisor</a>
+          <a href="https://wa.me/94771606203" target="_blank" rel="noopener">WhatsApp</a>
+          <a href="https://www.airbnb.ca/rooms/38684083" target="_blank" rel="noopener">Airbnb</a>
+          <a href="https://www.booking.com/hotel/lk/light-house-beach-hut.html?aid=311088" target="_blank" rel="noopener">Booking.com</a>
+        </div>
+      </div>
+      <form class="form-stub" onsubmit="return false;">
+        <div class="eyebrow">Send an enquiry</div>
+        <input type="text" placeholder="Your name" required>
+        <input type="email" placeholder="Email address" required>
+        <input type="text" placeholder="Dates of stay">
+        <textarea rows="4" placeholder="Tell us about your trip"></textarea>
+        <button class="btn btn-primary" type="submit">Send enquiry</button>
+      </form>
     </div>
   </section>
 
@@ -321,26 +355,6 @@
         <div class="map-address">Lighthouse Road, Komari, Pottuvil (32500)</div>
         <a class="btn btn-primary" href="https://www.google.com/maps/dir/?api=1&destination=Lighthouse+Beach+Hut,+Lighthouse+Road,+Komari,+Pottuvil,+Sri+Lanka" target="_blank" rel="noopener">Get directions →</a>
       </div>
-    </div>
-  </section>
-
-<section class="block" id="contact">
-    <div class="wrap contact-grid">
-      <div class="contact-card">
-        <h2 style="color:var(--cream); font-size:22px;">Lighthouse Beach Hut</h2>
-        <div class="row"><span>Address</span><span>Lighthouse Road, Komari, Pottuvil (32500)</span></div>
-        <div class="row"><span>Phone</span><span>+94 77 317 9594</span></div>
-        <div class="row"><span>Email</span><span>booking@lighthousebeachhut.com</span></div>
-        <div class="social-row"><a href="#" target="_blank" rel="noopener">Facebook</a></div>
-      </div>
-      <form class="form-stub" onsubmit="return false;">
-        <div class="eyebrow">Send an enquiry</div>
-        <input type="text" placeholder="Your name" required>
-        <input type="email" placeholder="Email address" required>
-        <input type="text" placeholder="Dates of stay">
-        <textarea rows="4" placeholder="Tell us about your trip"></textarea>
-        <button class="btn btn-primary" type="submit">Send enquiry</button>
-      </form>
     </div>
   </section>
 </main>
